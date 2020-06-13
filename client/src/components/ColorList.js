@@ -43,7 +43,7 @@ const ColorList = () => {
   };
   const saveAdd = (e) => {
     e.preventDefault();
-    console.log("stateColor", state.color);
+
     dispatch(postData(state.color));
     setAdditing(false);
     dispatch({ type: SET_INITIAL_COLOR });
