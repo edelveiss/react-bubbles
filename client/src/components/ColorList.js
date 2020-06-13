@@ -10,21 +10,12 @@ import {
   FORM_STATE_HEX,
 } from "../actions/index";
 
-// const initialColor = {
-//   color: "",
-//   code: { hex: "" }
-// };
-
 const ColorList = () => {
-  //console.log(colors);
-  //const [editing, setEditing] = useState(false);
-  //const [colorToEdit, setColorToEdit] = useState(initialColor);
   const state = useSelector((state) => state);
   const [additing, setAdditing] = useState(false);
+
   const dispatch = useDispatch();
   const editColor = (color) => {
-    // setEditing(true);
-    // setColorToEdit(color);
     dispatch({ type: EDITING_STATE });
     dispatch({ type: SET_COLOR, payload: color });
   };
@@ -39,16 +30,14 @@ const ColorList = () => {
   //-----------Add color--------------
   const addColor = () => {
     setAdditing(true);
-    //setColorToEdit(color);
   };
   const saveAdd = (e) => {
     e.preventDefault();
-
     dispatch(postData(state.color));
     setAdditing(false);
     dispatch({ type: SET_INITIAL_COLOR });
   };
-  //----------------------------------
+
   const cancelHandle = () => {
     dispatch({ type: SET_INITIAL_COLOR });
     // setEditing(false);
@@ -142,6 +131,7 @@ const ColorList = () => {
         {additing && (
           <form onSubmit={saveAdd}>
             <legend>add color</legend>
+
             <label>
               color name:
               <input
