@@ -23,14 +23,24 @@ body,
 .spacer {
   height: 100%;
 }
+.color-bubbles {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
 
 .bubble-wrap {
+  width: 60%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  margin-left: 3rem;
+  align-items: center;
 }
 
 .colors-wrap {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 300px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -96,4 +106,7 @@ form {
     padding: 3px 8px;
     margin-top: 16px;
   }
+}
+.error {
+  color: red;
 }
